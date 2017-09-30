@@ -69,7 +69,7 @@ plt.imshow(image)  # if you wanted to show a single color channel image called '
 
 
 
-    <matplotlib.image.AxesImage at 0x11b2660b8>
+    <matplotlib.image.AxesImage at 0x117323588>
 
 
 
@@ -376,20 +376,22 @@ output = 'test_videos_output/solidYellowLeft.mp4'
 clip1 = VideoFileClip("test_videos/solidYellowLeft.mp4")
 white_clip = clip1.fl_image(process_image) #NOTE: this function expects color images!!
 %time white_clip.write_videofile(output, audio=False)
+white_clip.reader.close()
+white_clip.audio.reader.close_proc()
 ```
 
     [MoviePy] >>>> Building video test_videos_output/solidYellowLeft.mp4
     [MoviePy] Writing video test_videos_output/solidYellowLeft.mp4
 
 
-    100%|█████████▉| 681/682 [00:13<00:00, 50.19it/s]
+    100%|█████████▉| 681/682 [00:14<00:00, 47.65it/s]
 
 
     [MoviePy] Done.
     [MoviePy] >>>> Video ready: test_videos_output/solidYellowLeft.mp4 
     
-    CPU times: user 9.5 s, sys: 987 ms, total: 10.5 s
-    Wall time: 14.3 s
+    CPU times: user 9.39 s, sys: 1.06 s, total: 10.5 s
+    Wall time: 14.9 s
 
 
 
@@ -437,20 +439,21 @@ yellow_output = 'test_videos_output/solidWhiteRight.mp4'
 clip2 = VideoFileClip('test_videos/solidWhiteRight.mp4')
 yellow_clip = clip2.fl_image(process_image)
 %time yellow_clip.write_videofile(yellow_output, audio=False)
+yellow_clip.reader.close()
 ```
 
     [MoviePy] >>>> Building video test_videos_output/solidWhiteRight.mp4
     [MoviePy] Writing video test_videos_output/solidWhiteRight.mp4
 
 
-    100%|█████████▉| 681/682 [00:15<00:00, 44.57it/s]
+    100%|█████████▉| 681/682 [00:13<00:00, 51.65it/s]
 
 
     [MoviePy] Done.
     [MoviePy] >>>> Video ready: test_videos_output/solidWhiteRight.mp4 
     
-    CPU times: user 10.3 s, sys: 1.04 s, total: 11.4 s
-    Wall time: 15.9 s
+    CPU times: user 9.31 s, sys: 857 ms, total: 10.2 s
+    Wall time: 13.6 s
 
 
 
@@ -497,20 +500,21 @@ challenge_output = 'test_videos_output/challenge.mp4'
 clip3 = VideoFileClip('test_videos/challenge.mp4')
 challenge_clip = clip3.fl_image(process_image)
 %time challenge_clip.write_videofile(challenge_output, audio=False)
+challenge_clip.reader.close()
 ```
 
     [MoviePy] >>>> Building video test_videos_output/challenge.mp4
     [MoviePy] Writing video test_videos_output/challenge.mp4
 
 
-    100%|██████████| 251/251 [00:10<00:00, 22.47it/s]
+    100%|██████████| 251/251 [00:10<00:00, 24.79it/s]
 
 
     [MoviePy] Done.
     [MoviePy] >>>> Video ready: test_videos_output/challenge.mp4 
     
-    CPU times: user 6.89 s, sys: 964 ms, total: 7.85 s
-    Wall time: 11.9 s
+    CPU times: user 6.54 s, sys: 909 ms, total: 7.45 s
+    Wall time: 11.3 s
 
 
 
